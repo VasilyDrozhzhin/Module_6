@@ -1,3 +1,4 @@
+# https://github.com/VasilyDrozhzhin/Module_6/blob/main/Module_6_1.py
 class Animal:
 	alive = True
 	fed = False
@@ -5,6 +6,13 @@ class Animal:
 	def __init__(self, name):
 		self.name = name
 
+	def eat(self, food):
+		if food.edible:
+			print(f'{self.name} съел {food.name}')
+			self.fed = True
+		else:
+			print(f'{self.name} не стал есть {food.name}')
+			self.alive = False
 
 class Plant:
 	edible = False
@@ -14,23 +22,11 @@ class Plant:
 
 
 class Mammal(Animal):
-	def eat(self, food):
-		if food.edible:
-			print(f'{self.name} съел {food.name}')
-			self.fed = True
-		else:
-			print(f'{self.name} не стал есть {food.name}')
-			self.alive = False
+	pass
 
 
 class Predator(Animal):
-	def eat(self, food):
-		if food.edible:
-			print(f'{self.name} съел {food.name}')
-			self.fed = True
-		else:
-			print(f'{self.name} не стал есть {food.name}')
-			self.alive = False
+	pass
 
 
 class Flower(Plant):
@@ -38,9 +34,7 @@ class Flower(Plant):
 
 
 class Fruit(Plant):
-	def __init__(self, name):
-		self.name = name
-		self.edible = True
+	edible = True
 
 
 a1 = Predator('Волк с Уолл-Стрит')
