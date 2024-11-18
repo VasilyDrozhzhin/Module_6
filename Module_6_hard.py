@@ -1,9 +1,10 @@
+# https://github.com/VasilyDrozhzhin/Module_6/blob/main/Module_6_hard.py
 import math
 class Figure:
 	sides_count = 0
 
 	def __init__(self, color, *sides, filled=False):
-		if len(sides) != self.sides_count:
+		if len(sides) != self.sides_count and __is_valid_sides(*sides):
 			sides = [1] * self.sides_count
 		self.__sides = list(sides)
 		self.__color = list(color)
